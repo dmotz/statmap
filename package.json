@@ -1,6 +1,6 @@
 {
   "name": "statmap",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Output recursive directory stats as JSON for visualization and analysis.",
   "main": "index.js",
   "bin": { "statmap" : "./index.js" },
