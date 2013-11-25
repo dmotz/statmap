@@ -29,9 +29,13 @@ module.exports = scan = function(dir, cb, tree) {
       fs.readdir(dir, function(err, files) {
         if (err) return cb(err);
         if (files.length) {
+          tree[baseName].sum      = 0;
           tree[baseName].children = {};
           async.each(files, function(file, cb) {
-            scan(dir + '/' + file, cb, tree[baseName].children);
+            scan(dir + '/' + file, function(err, branch){
+              tree[baseName].sum += branch[file].sum || branch[file].stats.size;
+              cb(err);
+            }, tree[baseName].children);
           }, function(err) {
             cb(err, tree)
           });
