@@ -1,0 +1,19 @@
+{
+  "name": "statmap",
+  "version": "0.0.0",
+  "description": "Output recursive directory stats as JSON for visualization and analysis.",
+  "main": "index.js",
+  "bin": { "statmap" : "./index.js" },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmotz/statmap"
+  },
+  "author": {
+    "name": "Dan Motzenbecker",
+    "email": "dan@oxism.com"
+  },
+  "license": "MIT",
+  "dependencies" : {
+    "async" : "~0.2.x"
+  }
+}
