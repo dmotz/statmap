@@ -31,6 +31,9 @@ $ statmap .. > parent.json
 The JSON will contain a recursive representation of the directory and all
 children. Each key is a file or directory name with a corresponding value
 containing a `stats` object and a `children` object if it is a directory.
+Directories also are also given a `sum` property which reflects the size of
+all children recursively, unlike the typical `size` property of directory's
+`stats` object.
 
 Here's an excerpt of the output for the package itself:
 
@@ -52,6 +55,7 @@ Here's an excerpt of the output for the package itself:
       "mtime": "2013-11-25T01:02:05.000Z",
       "ctime": "2013-11-25T01:02:05.000Z"
     },
+    "sum": 165329,
     "children": {
       "README.md": {
         "stats": {
