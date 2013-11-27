@@ -21,7 +21,7 @@ To map the current directory:
 $ statmap > stats.json
 ```
 
-Pass an optional second argument for a different directory:
+Pass an optional argument for a different directory:
 
 
 ```
@@ -107,6 +107,7 @@ Here's an excerpt of the output for the package itself:
           "mtime": "2013-11-24T23:00:54.000Z",
           "ctime": "2013-11-24T23:00:54.000Z"
         },
+        "sum": 124651,
         "children": {
           "async": {
             "stats": {
