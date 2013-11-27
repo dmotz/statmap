@@ -12,6 +12,7 @@
     "name": "Dan Motzenbecker",
     "email": "dan@oxism.com"
   },
+  "keywords": ["json", "disk", "drive", "stats"],
   "license": "MIT",
   "dependencies" : {
     "async" : "~0.2.x"
