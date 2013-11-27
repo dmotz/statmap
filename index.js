@@ -22,7 +22,6 @@ module.exports = scan = function(dir, cb, tree) {
 
   fs.stat(dir, function(err, stats) {
     if (err) return cb(err);
-
     tree[baseName].stats = stats;
 
     if (stats.isDirectory()) {
@@ -32,9 +31,10 @@ module.exports = scan = function(dir, cb, tree) {
           tree[baseName].sum      = 0;
           tree[baseName].children = {};
           async.each(files, function(file, cb) {
-            scan(dir + '/' + file, function(err, branch){
+            scan(path.join(dir, file), function(err, branch) {
               if (err) return cb(err);
               tree[baseName].sum += branch[file].sum || branch[file].stats.size;
+              cb();
             }, tree[baseName].children);
           }, function(err) {
             cb(err, tree)
