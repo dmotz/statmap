@@ -37,7 +37,7 @@ module.exports = scan = function(dir, cb, tree) {
               cb();
             }, tree[baseName].children);
           }, function(err) {
-            cb(err, tree)
+            cb(err, tree);
           });
         } else {
           cb(null, tree);
